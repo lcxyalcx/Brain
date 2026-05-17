@@ -1,21 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "KPL 爱因斯坦的大脑 · 粉丝玩梗分配器",
+  title: "KPL 爱因斯坦的大脑 · 粉丝下单演示站",
   description:
-    "选择支持的 KPL 战队，规划「爱因斯坦的大脑」份数并分配到选手。粉丝向模拟，可部署至 Vercel。",
+    "选择支持的 KPL 战队，购买脑子数量，并把脑子分配到指定选手头上。纯前端演示，适合部署到 Vercel。",
 };
 
 export default function RootLayout({
@@ -24,11 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="zh-CN"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="zh-CN" className="h-full antialiased">
+      <body className="min-h-full bg-background text-foreground">{children}</body>
     </html>
   );
 }
